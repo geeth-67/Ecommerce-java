@@ -1,4 +1,4 @@
-public class ElectricProduct extends Product {
+public class ElectricProduct extends Product implements Returnable{
 
     private String brand;
     private int warrantyPeriod;
@@ -14,5 +14,35 @@ public class ElectricProduct extends Product {
     @Override
     String getCategory() {
         return "Electronic";
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public int getWarrantyPeriod() {
+        return warrantyPeriod;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setWarrantyPeriod(int warrantyPeriod) {
+        this.warrantyPeriod = warrantyPeriod;
+    }
+
+    @Override
+    public int getReturnWindow() {
+        return 30;
+    }
+
+    @Override
+    public boolean isReturnEligible() {
+
+        if (getReturnWindow() > getReturnWindow()) {
+            return false;
+        }
+        return true;
     }
 }
